@@ -308,7 +308,7 @@ def main():
     help_handler = CommandHandler("help", help)#
     inventory_handler = CommandHandler("inventory", show_inventory)#
     add_handler = CommandHandler("add", add_to_cart,pass_args=True)#
-    remove_handler = CommandHandler("remove", remove_from_cart,pass_args=True)
+    remove_handler = CommandHandler("remove", remove_from_cart,pass_args=True)#
     cart_handler = CommandHandler("cart", show_cart)#
     checkout_handler = CommandHandler("checkout", checkout)#
     points_handler = CommandHandler("points", points)#
