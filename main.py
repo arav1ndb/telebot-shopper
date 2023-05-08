@@ -11,10 +11,10 @@ stripe.api_key = 'pk_test_51N5C8dSIEvzvJOEZ6JpKDWjGLQs5Wt0dTP5ZkiclUxbWV3qAYAcgk
 
 # Create a dataframe to store inventory items
 inventory = pd.DataFrame({
-    'item_id': ['item1', 'item2', 'item3', 'item4', 'item5'],
-    'item_name': ['sting', 'good day ', 'hide n seek', 'amul chocobar', 'kit kat'],
-    'item_price': [20, 10, 30, 15, 25],
-    'item_quantity': [35, 50, 30, 8, 100]
+    'item_id': ['item1', 'item2', 'item3', 'item4', 'item5','item6','item7','item8','item9','item10'],
+    'item_name': ['sting', 'good day ', 'hide n seek', 'amul chocobar', 'kit kat','bytes','choco pie','perk','milk bikies','gone mad'],
+    'item_price': [20, 10, 30, 15, 25,10,10,5,15,5],
+    'item_quantity': [35, 50, 30, 8, 100,50,35,25,50,75]
 })
 
 # Define the user history dataframe
@@ -48,6 +48,7 @@ def show_inventory(update, context):
     message = "Here are the available items:\n"
     for index, item in inventory.iterrows():
         message += f"{item['item_id']}: {item['item_name']} - \u20B9{item['item_price']}\n"
+    message += '\n use */add item quantity* to add items to your car and /checkout to checkout'
     context.bot.send_message(chat_id=chat_id, text=message)
 
 # # Define a function to handle item selection and adding to cart
